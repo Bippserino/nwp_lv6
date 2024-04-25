@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+	div(class="container")
+		h1.
+			Project ID #{project._id}
+
+		form(action='/projects/edit/#{project._id}', method='post', name='updateproject', enctype='application/x-www-form-urlencoded')
+			div(class="form-group row")
+				p(for=projectName) Project Name:
+				input#inputProjectName(type='text', value='#{project.projectName}', name='projectName' class="form-control" required)
+			div(class="form-group row")
+				p(for=projectDescription) Project Description:
+				input#inputProjectDescription(type='text', value='#{project.projectDescription}', name='projectDescription' class="form-control" required)
+			div(class="form-group row")
+				p(for=projectPrice) Price:
+				input#inputProjectPrice(type='number', value='#{project.projectPrice}', name='projectPrice' class="form-control" required)
+			div(class="form-group row")
+				p(for=projectFinishedWorks) Completed Tasks:
+				input#inputProjectFinishedWorks(type='text', value='#{project.projectFinishedWorks}', name='projectFinishedWorks' class="form-control" required)
+			div(class="form-group row")
+				p(for=projectStartDate) Start Date:
+				input#inputProjectStartDate(type='date', value='#{project.projectStartDate}', name='projectStartDate' class="form-control" required)
+			div(class="form-group row")
+				p(for=projectEndDate) End Date:
+				input#inputProjectEndDate(type='date', value='#{project.projectEndDate}', name='projectEndDate' class="form-control" required)
+			div(class="form-group row")
+				p(for=projectMembers) Project Members:
+				input#inputProjectMembers(type='text', value='#{project.projectMembers}', name='projectMembers' class="form-control" required)
+			p
+				input(type='hidden', value='PUT', name='_method')
+			p
+				button#btnSubmit(type='submit' class="btn btn-primary").
+					Apply

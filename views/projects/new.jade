@@ -1,0 +1,32 @@
+
+extends ../layout
+
+block content
+	div
+		h2.
+			#{title}
+
+		form#formAddProject(name="addproject", method="post", action="/projects")
+			div(class="form-group row")
+				p(for=projectName) Project Name:
+				input#inputProjectName(type="text", placeholder="Project Name", name="projectName" class="form-control" required)
+			div(class="form-group row")
+				p(for=projectDescription) Project Description:
+				input#inputProjectDescription(type="text", placeholder="Project Description", name="projectDescription" class="form-control" required)
+			div(class="form-group row")
+				p(for=projectPrice) Price:
+				input#inputProjectPrice(type="number", placeholder="Price", name="projectPrice" class="form-control" required)
+			div(class="form-group row")
+				p(for=projectFinishedWorks) Completed Tasks:
+				input#inputProjectFinishedWorks(type="text", placeholder="Completed Tasks", name="projectFinishedWorks" class="form-control" required)
+			div(class="form-group row")
+				p(for=projectStartDate) Start Date:
+				input#inputProjectStartDate(type="date", name="projectStartDate" class="form-control" required)
+			div(class="form-group row")
+				p(for=projectEndDate) End Date:
+				input#inputProjectEndDate(type="date", name="projectEndDate" class="form-control" required)
+			div(class="form-group row")
+				p(for=projectMembers) Project Members:
+				input#inputProjectMembers(type="text", placeholder="Project Members", name="projectMembers" class="form-control" required)
+			p
+			button#btnSubmit(type="submit" class="btn btn-primary") Add

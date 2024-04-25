@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+        h2 Project Details
+        div(class="details")
+            p 
+                strong Project Name:
+                |  #{project.projectName}
+            p
+                strong Project Description:
+                |  #{project.projectDescription}
+            p
+                strong Project Price:
+                |  #{project.projectPrice} eur
+            p
+                strong Completed Tasks:
+                |  #{project.projectFinishedWorks}
+            p
+                strong Start Date:
+                |  #{project.projectStartDate}
+            p
+                strong End Date:
+                |  #{project.projectEndDate}
+            p
+                strong Project Members:
+                |  #{project.projectMembers}
+ 
